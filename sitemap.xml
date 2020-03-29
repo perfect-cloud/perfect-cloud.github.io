@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/29/hello-my-blog/</loc>
+    
+    <lastmod>2020-03-29T07:06:42.647Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/index.html</loc>
+    
+    <lastmod>2020-03-28T02:17:28.410Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2020-03-28T02:16:51.833Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/03/27/djy/</loc>
+    
+    <lastmod>2020-03-27T10:04:25.426Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2019/12/29/hello-world/</loc>
+    
+    <lastmod>2019-12-29T13:49:08.861Z</lastmod>
+    
+  </url>
+  
+</urlset>
