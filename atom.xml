@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-03-29T07:06:42.647Z</updated>
+  <updated>2020-03-31T13:30:21.669Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,20 +18,40 @@
   
   <entry>
     <title>hello-my-blog</title>
-    <link href="http://yoursite.com/2020/03/29/hello-my-blog/"/>
-    <id>http://yoursite.com/2020/03/29/hello-my-blog/</id>
-    <published>2020-03-29T07:06:42.654Z</published>
-    <updated>2020-03-29T07:06:42.647Z</updated>
+    <link href="http://yoursite.com/2020/03/31/hello-my-blog/"/>
+    <id>http://yoursite.com/2020/03/31/hello-my-blog/</id>
+    <published>2020-03-31T13:30:21.672Z</published>
+    <updated>2020-03-31T13:30:21.669Z</updated>
     
-    <content type="html"><![CDATA[<hr><p>title: hello my blog<br>date: 2020-03-29 14:58:23<br>tags:<br>–<br>hello my blog</p>]]></content>
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js"></script><hr><p>title: hello my blog<br>date: 2020-03-29 14:58:23<br>tags:</p><ul><li>教程</li><li>Hexo</li><li>分享<br>categories:</li><li><h2 id="云游的小安利"><a href="#云游的小安利" class="headerlink" title="云游的小安利"></a>云游的小安利</h2>hello my blog</li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;hr&gt;
-&lt;p&gt;title: hello my blog&lt;br&gt;date: 2020-03-29 14:58:23&lt;br&gt;tags:&lt;br&gt;–&lt;br&gt;hello my blog&lt;/p&gt;
-
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css&quot;&gt;&lt;scrip
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2020/03/31/test/"/>
+    <id>http://yoursite.com/2020/03/31/test/</id>
+    <published>2020-03-31T13:25:42.000Z</published>
+    <updated>2020-03-31T13:25:42.024Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js"></script>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css&quot;&gt;&lt;scrip
       
     
     </summary>
