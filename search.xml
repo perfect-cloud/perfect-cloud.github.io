@@ -43,9 +43,7 @@
 <h5 id="注释符"><a href="#注释符" class="headerlink" title="注释符"></a>注释符</h5><p>在MYSQL中，常见注释符有：#或–空格或/**/。</p>
 <h5 id="内联注释"><a href="#内联注释" class="headerlink" title="内联注释"></a>内联注释</h5><p>内联注释的形式：/*! code */。内联注释可以用于整个SQL语句中，用来执行我们的SQL语句。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">index.php?id&#x3D;-15 &#x2F;*!UNION*&#x2F; &#x2F;*!SELECT*&#x2F; 1,2,3</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h4 id="Union注入攻击"><a href="#Union注入攻击" class="headerlink" title="Union注入攻击"></a>Union注入攻击</h4>]]></content>
+]]></content>
   </entry>
   <entry>
     <title>创建小站</title>
