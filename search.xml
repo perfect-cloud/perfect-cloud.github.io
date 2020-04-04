@@ -4,7 +4,7 @@
     <title>SQL注入</title>
     <url>/2020/04/04/SQL%E6%B3%A8%E5%85%A5%E5%AD%A6%E4%B9%A0/</url>
     <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js"></script><blockquote>
-<h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4></blockquote>
+<h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a><strong>原理：</strong></h4></blockquote>
 <p>需满足条件：</p>
 <p>1.参数条件可控，前端传给后端的参数内容是用户可以控制的。</p>
 <p>2.参数代入数据库查询：传入的参数拼接到SQL语句，且带入数据库查询。</p>
@@ -18,7 +18,7 @@
 <p>由此可以判断ID参数存在SQL注入漏洞。</p>
 <hr>
 <blockquote>
-<h4 id="相关知识点"><a href="#相关知识点" class="headerlink" title="相关知识点"></a>相关知识点</h4></blockquote>
+<h4 id="相关知识点"><a href="#相关知识点" class="headerlink" title="相关知识点"></a><strong>相关知识点</strong></h4></blockquote>
 <p>MYSQL5.0版本之后，MYSQL默认在数据库中存放一个“information schema”的数据库，在该库中，三个重要的表名，SCHEMATA、TABLES、COLUMES。</p>
 <p>SCHEMATA表存储该用户创建的所有数据库的库名。</p>
 <p><img src="https://i.loli.net/2020/04/04/ofGrtFWi17eOmNM.jpg" alt="image-20200404172925519.png" loading="lazy"></p>
