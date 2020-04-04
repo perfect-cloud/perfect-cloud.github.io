@@ -29,7 +29,7 @@
 <p>COLUMNS表存储该用户创建的所有数据库的库名、表名和字段名，其对应的字段名分别为TABLE_SCHEMA、TABLE_NAME和COLUMN_NAME。</p>
 <p><img src="https://i.loli.net/2020/04/04/SWplDK6eEBt1yaZ.jpg" alt="image-20200404173407370.png" loading="lazy"></p>
 <p>图3  COLUMNS表</p>
-<h5 id="1-MYSQL查询语句"><a href="#1-MYSQL查询语句" class="headerlink" title="1.MYSQL查询语句"></a>1.MYSQL查询语句</h5><p>在不知道任何条件时，语句如下所示。</p>
+<h5 id="MYSQL查询语句"><a href="#MYSQL查询语句" class="headerlink" title="MYSQL查询语句"></a><strong>MYSQL查询语句</strong></h5><p>在不知道任何条件时，语句如下所示。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT 要查询的字段名 FROM 库名，表名</span><br></pre></td></tr></table></figure>
 
 <p>在知道一条已知条件时，语句如下所示。</p>
@@ -38,14 +38,14 @@
 <p>在知道两条已知条件时，语句如下所示。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT 要查询的字段名 FROM 库名，表名 WHERE 已知条件1的字段名&#x3D;&#39;已知条件1的值&#39; AND 已知条件2的字段名&#x3D;&#39;已知条件2的值&#39;</span><br></pre></td></tr></table></figure>
 
-<h5 id="2-LIMIT的用法"><a href="#2-LIMIT的用法" class="headerlink" title="2.LIMIT的用法"></a>2.LIMIT的用法</h5><p>limit使用格式为limit m,n，其中m指记录开始的位置，从0开始，表示第一条记录，n指取n条记录。例如limit 0,1指从第一条记录开始，取一条记录。</p>
-<h5 id="3-几个重要的函数"><a href="#3-几个重要的函数" class="headerlink" title="3.几个重要的函数"></a>3.几个重要的函数</h5><ul>
+<h5 id="LIMIT的用法"><a href="#LIMIT的用法" class="headerlink" title="LIMIT的用法"></a><strong>LIMIT的用法</strong></h5><p>limit使用格式为limit m,n，其中m指记录开始的位置，从0开始，表示第一条记录，n指取n条记录。例如limit 0,1指从第一条记录开始，取一条记录。</p>
+<h5 id="几个重要的函数"><a href="#几个重要的函数" class="headerlink" title="几个重要的函数"></a><strong>几个重要的函数</strong></h5><ul>
 <li>database()：当前网站使用的数据库。</li>
 <li>version()：当前MYSQL的版本。</li>
 <li>user()：当前MYSQL的用户。</li>
 </ul>
-<h5 id="4-注释符"><a href="#4-注释符" class="headerlink" title="4.注释符"></a>4.注释符</h5><p>在MYSQL中，常见注释符有：#或–空格或/**/。</p>
-<h5 id="5-内联注释"><a href="#5-内联注释" class="headerlink" title="5.内联注释"></a>5.内联注释</h5><p>内联注释的形式：/*! code */。内联注释可以用于整个SQL语句中，用来执行我们的SQL语句。</p>
+<h5 id="注释符"><a href="#注释符" class="headerlink" title="注释符"></a><strong>注释符</strong></h5><p>在MYSQL中，常见注释符有：#或–空格或/**/。</p>
+<h5 id="内联注释"><a href="#内联注释" class="headerlink" title="内联注释"></a><strong>内联注释</strong></h5><p>内联注释的形式：/*! code */。内联注释可以用于整个SQL语句中，用来执行我们的SQL语句。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">index.php?id&#x3D;-15 &#x2F;*!UNION*&#x2F; &#x2F;*!SELECT*&#x2F; 1,2,3</span><br></pre></td></tr></table></figure>
 ]]></content>
       <tags>
