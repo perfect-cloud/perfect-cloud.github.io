@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-01T10:43:21.302Z</updated>
+  <updated>2020-04-04T10:09:36.079Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SQL注入学习</title>
+    <link href="http://yoursite.com/2020/04/04/SQL%E6%B3%A8%E5%85%A5%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2020/04/04/SQL%E6%B3%A8%E5%85%A5%E5%AD%A6%E4%B9%A0/</id>
+    <published>2020-04-04T10:09:36.079Z</published>
+    <updated>2020-04-04T10:09:36.079Z</updated>
+    
+    <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.js" class="aplayer-secondary-script-marker"></script><script class="meting-secondary-script-marker" src="https://cdn.jsdelivr.net/npm/meting@1/dist/Meting.min.js"></script><h3 id="SQL注入学习"><a href="#SQL注入学习" class="headerlink" title="SQL注入学习"></a>SQL注入学习</h3><h4 id="原理："><a href="#原理：" class="headerlink" title="原理："></a>原理：</h4><p>需满足条件：</p><p>1.参数条件可控，前端传给后端的参数内容是用户可以控制的。</p><p>2.参数代入数据库查询：传入的参数拼接到SQL语句，且带入数据库查询。</p><p>当传入ID参数为1’时，数据库执行代码如下所示</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span><span class="string">'</span></span><br></pre></td></tr></table></figure><p>这不符合数据库语法规范，所以会报错。当传入ID值为and 1=1时，执行的SQL语句如下所示</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> <span class="keyword">id</span> = <span class="number">1</span><span class="string">' 1=1</span></span><br></pre></td></tr></table></figure><p>因为1=1为真，且where语句中id=1也为真，所以页面会返回与id=1相同的结果。当传入的ID参数为and 1=2时，由于1=2不成立，所以返回假，页面则返回与id=1不同的结果。</p><p>由此可以判断ID参数存在SQL注入漏洞。</p><hr><h4 id="相关知识点"><a href="#相关知识点" class="headerlink" title="相关知识点"></a>相关知识点</h4><p>MYSQL5.0版本之后，MYSQL默认在数据库中存放一个“information schema”的数据库，在该库中，三个重要的表名，SCHEMATA、TABLES、COLUMES。</p><p>SCHEMATA表存储该用户创建的所有数据库的库名。</p><p>![image-20200404172925519](/Users/minamirougakaku/Library/Application Support/typora-user-images/image-20200404172925519.png)</p><p>图1   SCHEMATA表</p><p>TABLES表存储该用户创建的所有数据库的库名和表名，其对应的字段名分别为TABLE_SCHEMA和TABLE_NAME。</p><p>![image-20200404172827963](/Users/minamirougakaku/Library/Application Support/typora-user-images/image-20200404172827963.png)</p><p>图2  TABLES表</p><p>COLUMNS表存储该用户创建的所有数据库的库名、表名和字段名，其对应的字段名分别为TABLE_SCHEMA、TABLE_NAME和COLUMN_NAME。</p><p>![image-20200404173407370](/Users/minamirougakaku/Library/Application Support/typora-user-images/image-20200404173407370.png)</p><h5 id="MYSQL查询语句"><a href="#MYSQL查询语句" class="headerlink" title="MYSQL查询语句"></a>MYSQL查询语句</h5><p>在不知道任何条件时，语句如下所示。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 要查询的字段名 FROM 库名，表名</span><br></pre></td></tr></table></figure><p>在知道一条已知条件时，语句如下所示。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 要查询的字段名 FROM 库名，表名 WHERE 已知条件的字段名&#x3D;&#39;已知条件的值&#39;</span><br></pre></td></tr></table></figure><p>在知道两条已知条件时，语句如下所示。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT 要查询的字段名 FROM 库名，表名 WHERE 已知条件1的字段名&#x3D;&#39;已知条件1的值&#39; AND 已知条件2的字段名&#x3D;&#39;已知条件2的值&#39;</span><br></pre></td></tr></table></figure><h5 id="LIMIT的用法"><a href="#LIMIT的用法" class="headerlink" title="LIMIT的用法"></a>LIMIT的用法</h5><p>limit使用格式为limit m,n，其中m指记录开始的位置，从0开始，表示第一条记录，n指取n条记录。例如limit 0,1指从第一条记录开始，取一条记录。</p><h5 id="几个重要的函数"><a href="#几个重要的函数" class="headerlink" title="几个重要的函数"></a>几个重要的函数</h5><ul><li>database()：当前网站使用的数据库。</li><li>version()：当前MYSQL的版本。</li><li>user()：当前MYSQL的用户。</li></ul><h5 id="注释符"><a href="#注释符" class="headerlink" title="注释符"></a>注释符</h5><p>在MYSQL中，常见注释符有：#或–空格或/**/。</p><h5 id="内联注释"><a href="#内联注释" class="headerlink" title="内联注释"></a>内联注释</h5><p>内联注释的形式：/*! code */。内联注释可以用于整个SQL语句中，用来执行我们的SQL语句。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index.php?id&#x3D;-15 &#x2F;*!UNION*&#x2F; &#x2F;*!SELECT*&#x2F; 1,2,3</span><br></pre></td></tr></table></figure><hr><h4 id="Union注入攻击"><a href="#Union注入攻击" class="headerlink" title="Union注入攻击"></a>Union注入攻击</h4>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;link rel=&quot;stylesheet&quot; class=&quot;aplayer-secondary-style-marker&quot; href=&quot;https://cdn.jsdelivr.net/npm/aplayer@latest/dist/APlayer.min.css&quot;&gt;&lt;scrip
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>创建小站</title>
