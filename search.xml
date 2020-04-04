@@ -31,9 +31,8 @@
 <p>COLUMNS表存储该用户创建的所有数据库的库名、表名和字段名，其对应的字段名分别为TABLE_SCHEMA、TABLE_NAME和COLUMN_NAME。</p>
 <p><img src="https://i.loli.net/2020/04/04/SWplDK6eEBt1yaZ.jpg" alt="image-20200404173407370.png" loading="lazy"></p>
 <center>图3  COLUMNS表</center>
-##### **MYSQL查询语句**
 
-<p>在不知道任何条件时，语句如下所示。</p>
+<h5 id="MYSQL查询语句"><a href="#MYSQL查询语句" class="headerlink" title="MYSQL查询语句"></a><strong>MYSQL查询语句</strong></h5><p>在不知道任何条件时，语句如下所示。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT 要查询的字段名 FROM 库名，表名</span><br></pre></td></tr></table></figure>
 
 <p>在知道一条已知条件时，语句如下所示。</p>
