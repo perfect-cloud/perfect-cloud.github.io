@@ -17,13 +17,14 @@
 <hr>
 <h4 id="相关知识点"><a href="#相关知识点" class="headerlink" title="相关知识点"></a>相关知识点</h4><p>MYSQL5.0版本之后，MYSQL默认在数据库中存放一个“information schema”的数据库，在该库中，三个重要的表名，SCHEMATA、TABLES、COLUMES。</p>
 <p>SCHEMATA表存储该用户创建的所有数据库的库名。</p>
-<p><img src="https://i.loli.net/2020/04/04/HI5qE7uaw8pmyAr.png" alt="image-20200404172925519.png" loading="lazy"></p>
+<p><img src="https://i.loli.net/2020/04/04/ofGrtFWi17eOmNM.jpg" alt="image-20200404172925519.png" loading="lazy"></p>
 <p>图1   SCHEMATA表</p>
 <p>TABLES表存储该用户创建的所有数据库的库名和表名，其对应的字段名分别为TABLE_SCHEMA和TABLE_NAME。</p>
-<p><img src="https://i.loli.net/2020/04/04/kVCbQeEnwU74SgB.png" alt="image-20200404172827963.png" loading="lazy"></p>
+<p><img src="https://i.loli.net/2020/04/04/JdWiQ3jvg9fm2Zn.jpg" alt="image-20200404172827963.png" loading="lazy"></p>
 <p>图2  TABLES表</p>
 <p>COLUMNS表存储该用户创建的所有数据库的库名、表名和字段名，其对应的字段名分别为TABLE_SCHEMA、TABLE_NAME和COLUMN_NAME。</p>
-<p><img src="https://i.loli.net/2020/04/04/G4TrueRQVzlmD8s.png" alt="image-20200404173407370.png" loading="lazy"></p>
+<p><img src="https://i.loli.net/2020/04/04/SWplDK6eEBt1yaZ.jpg" alt="image-20200404173407370.png" loading="lazy"></p>
+<p>图3  COLUMNS表</p>
 <h5 id="MYSQL查询语句"><a href="#MYSQL查询语句" class="headerlink" title="MYSQL查询语句"></a>MYSQL查询语句</h5><p>在不知道任何条件时，语句如下所示。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">SELECT 要查询的字段名 FROM 库名，表名</span><br></pre></td></tr></table></figure>
 
