@@ -4,20 +4,37 @@ console.log(
   "padding:4px;border:1px solid #0078E7;"
 );
 
-function initPage() {
-  if (typeof ScrollReveal !== "undefined") {
-    ScrollReveal().reveal(".post-card");
-  }
+// scroll
+function scrollPercent(curTop) {
+  const bodyHeight = document.body.clientHeight;
+  const windowHeight = window.innerHeight;
+  const circumference = progressCircle.r.baseVal.value * 2 * Math.PI;
+  const offset =
+    circumference - (curTop / (bodyHeight - windowHeight)) * circumference;
+  progressCircle.setAttribute(
+    "stroke-dasharray",
+    `${circumference} ${circumference}`
+  );
+  progressCircle.setAttribute("stroke-dashoffset", offset);
+}
 
+function initPage() {
   // open sidebar
-  document.querySelector(".sidebar-toggle").onclick = function() {
-    this.querySelector(".hamburger").classList.toggle("is-active");
-    document.querySelector(".container").classList.toggle("sidebar-open");
-  };
+  const toggleBtns = document.querySelectorAll(".sidebar-toggle");
+  toggleBtns.forEach((el) => {
+    el.addEventListener("click", () => {
+      document.querySelector(".hamburger").classList.toggle("is-active");
+      document.querySelector(".container").classList.toggle("sidebar-open");
+    });
+  });
 
   window.addEventListener("scroll", function() {
     goUp.classList.toggle("show", window.scrollY > 64);
+    scrollPercent(window.scrollY);
   });
+
+  // wrap
+  Yun.utils.wrapTable();
 }
 
 document.addEventListener("DOMContentLoaded", () => {
